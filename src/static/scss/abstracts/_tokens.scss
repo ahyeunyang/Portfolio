@@ -1,0 +1,34 @@
+// Semantic aliases: palette and scale values live in common/_variables.scss.
+$color-text: var(--color-gray-900);
+$color-background: var(--color-gray-050);
+$color-accent: var(--color-primary);
+$color-border: var(--color-gray-250);
+$color-muted: var(--color-gray-550);
+$color-white: var(--color-gray-000);
+$color-focus: var(--color-focus);
+$color-surface: var(--color-gray-150);
+$radius-small: var(--radius-6);
+$radius-medium: var(--radius-12);
+$radius-pill: var(--radius-32);
+$radius-circle: 50%;
+$font-body:
+  "Pretendard",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
+$space-1: var(--spacing-4);
+$space-2: var(--spacing-8);
+$space-3: var(--spacing-12);
+$space-4: var(--spacing-16);
+$space-5: var(--spacing-20);
+$space-6: var(--spacing-24);
+$space-8: var(--spacing-32);
+$space-10: var(--spacing-40);
+$space-12: var(--spacing-48);
+$space-15: calc(var(--spacing-56) + var(--spacing-4));
+$space-20: var(--spacing-80);
+$page-gutter: 5%;
+$content-width: 100rem;
+$breakpoint-mobile: 47.5rem;
+$breakpoint-header-mobile: 74.99875rem;
