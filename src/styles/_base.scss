@@ -1,0 +1,48 @@
+@use "tokens" as *;
+@use "mixins" as *;
+:root {
+  font-family: $font-body;
+  color: $color-text;
+  background: $color-background;
+  font-synthesis: none;
+  font-weight: var(--font-weight-regular);
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--size-110);
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: var(--border-width-3) solid $color-focus;
+  outline-offset: var(--border-width-6);
+}
+::selection {
+  background: var(--color-primary);
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
