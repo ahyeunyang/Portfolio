@@ -4,6 +4,7 @@ import PageContainer from "../../components/PageContainer/PageContainer";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import SkillsShowcase from "../../components/SkillsShowcase/SkillsShowcase";
 import "./Skills.scss";
+import "./SkillsMobile.scss";
 
 export default function Skills() {
   return (

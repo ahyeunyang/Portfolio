@@ -37,6 +37,7 @@ a:focus-visible {
 }
 ::selection {
   background: var(--color-primary);
+  color: var(--color-gray-1000);
 }
 @media (prefers-reduced-motion: reduce) {
   html {

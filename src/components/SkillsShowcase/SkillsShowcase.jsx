@@ -126,10 +126,9 @@ export default function SkillsShowcase() {
               <span>주요 기술</span>
             </div>
           </div>
-          <p>
-            디자인의 의도를 이해하고
-            <br />
-            실제 화면까지 연결합니다.
+          <p className="skills-showcase__description">
+            화면을 구성하는 기본 기술부터 인터랙션과 프론트엔드 프레임워크, UI/UX 디자인 및 협업 도구까지.
+            다양한 기술과 도구를 활용하여 사용자 경험을 구현하고, 효율적인 개발 환경과 완성도 높은 웹 인터페이스를 만들어갑니다.
           </p>
         </div>
         <div

@@ -46,22 +46,27 @@
   flex: var(--opacity-0) var(--opacity-0) auto;
   color: var(--color-gray-550);
   background: var(--color-gray-950);
-  opacity: var(--opacity-0-1);
+  opacity: var(--opacity-0-2);
   font-size: var(--font-size-13);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--value-negative-0).04em;
 }
 .skills-showcase__body {
   display: grid;
+  align-items: start;
   grid-template-columns: minmax(var(--value-360px), var(--value-420px)) minmax(var(--opacity-0), var(--value-812px));
   justify-content: center;
   gap: var(--spacing-40);
   min-height: var(--value-706px);
-  margin-top: var(--font-size-60);
+  margin-top: var(--spacing-49);
   padding-top: var(--opacity-0);
 }
 .skills-showcase__stats {
-  padding-top: var(--radius-8);
+  display: grid;
+  align-self: start;
+  align-content: start;
+  gap: var(--spacing-30);
+  padding-top: var(--opacity-0);
 }
 .skills-showcase__stat-grid {
   display: grid;
@@ -75,9 +80,10 @@
 }
 .skills-showcase__stat-grid strong {
   color: var(--color-gray-200);
-  font-size: clamp(var(--size-44), var(--value-4vw), var(--value-72px));
+  font-size: var(--font-size-stat);
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-1);
-  letter-spacing: var(--value-negative-0).06em;
+  letter-spacing: var(--tracking-tight-4);
 }
 .skills-showcase__stat-grid span,
 .skills-showcase__stats p {
@@ -86,8 +92,10 @@
   line-height: var(--line-height-1-5);
 }
 .skills-showcase__stats p {
-  margin-top: var(--value-52px);
+  margin: var(--opacity-0);
   color: var(--color-gray-550);
+  font-size: var(--font-size-14);
+  letter-spacing: var(--tracking-tight-2);
 }
 .skills-showcase__list {
   position: relative;
@@ -193,6 +201,8 @@
   background: linear-gradient(var(--color-gray-950), transparent);
 }
 .skills-showcase__card > div:last-child {
+  display: grid;
+  gap: var(--spacing-4);
   min-width: var(--opacity-0);
 }
 .skills-showcase__card h3,
@@ -256,7 +266,7 @@
   line-height: var(--line-height-1-3);
 }
 .skills-showcase__card p {
-  margin: var(--radius-6) var(--opacity-0) var(--opacity-0);
+  margin: var(--opacity-0);
   color: var(--color-gray-400);
   font-size: var(--spacing-14);
   line-height: var(--value-1-4);
@@ -269,6 +279,55 @@
     transform: translateX(calc(var(--value-negative-50) * 1%));
   }
 }
+.skills-showcase__stat-grid { gap: var(--spacing-50); }
+.skills-showcase__stat-grid span {
+  color: var(--color-gray-200);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-1-3);
+  letter-spacing: var(--tracking-tight-4);
+}
+@media (max-width: 47.5rem) {
+  .skills-showcase__stat-grid strong {
+    font-size: var(--font-size-40);
+    line-height: var(--line-height-1);
+    letter-spacing: var(--tracking-tight-4);
+  }
+  .skills-showcase__stat-grid span {
+    font-size: var(--font-size-12);
+    line-height: var(--line-height-1-3);
+  }
+  .skills-showcase__stats .skills-showcase__description {
+    font-size: var(--font-size-14);
+    line-height: var(--line-height-1-5);
+    letter-spacing: var(--tracking-tight-2);
+  }
+  .skills-showcase {
+    display: grid;
+    grid-template-areas: "stats" "marquee" "description" "cards";
+    gap: var(--spacing-30);
+    margin-left: var(--opacity-0);
+    border-top: none;
+  }
+  .skills-showcase__body { display: contents; }
+  .skills-showcase__stats { display: contents; }
+  .skills-showcase__stat-grid {
+    grid-area: stats;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-20);
+    margin: var(--opacity-0);
+  }
+  .skills-showcase__marquee {
+    grid-area: marquee;
+    margin-top: var(--opacity-0);
+    border-top: var(--border-width-1) solid var(--color-gray-800);
+  }
+  .skills-showcase__description {
+    grid-area: description;
+    margin: var(--opacity-0);
+  }
+  .skills-showcase__list { grid-area: cards; }
+}
 @media (prefers-reduced-motion: reduce) {
   .skills-showcase__track {
     animation: none;
@@ -279,7 +338,7 @@
     grid-template-columns: 1fr;
   }
   .skills-showcase__stats p {
-    margin-top: var(--font-size-28);
+    margin-top: var(--opacity-0);
   }
 }
 @media (max-width: 47.5rem) {
@@ -293,14 +352,15 @@
     height: var(--value-76px);
   }
   .skills-showcase__track span {
-    width: var(--value-86px);
-    height: var(--value-42px);
+    width: var(--value-72px);
+    height: var(--size-36);
     font-size: var(--radius-12);
   }
   .skills-showcase__body {
     margin-top: var(--spacing-40);
   }
   .skills-showcase__list {
+    margin-top: var(--opacity-0);
     height: var(--value-506px);
     max-height: var(--value-506px);
     overflow-y: auto;
