@@ -1,1 +1,31 @@
-// Skills 페이지 전용 스타일. 공통 레이아웃은 MenuPage에서 관리합니다.
+.skills-page {
+  min-height: var(--value-60vh);
+  background: var(--color-gray-950);
+}
+.skills-page__content {
+  position: relative;
+  padding-block: var(--value-250px) var(--font-size-150);
+}
+.skills-page__content > .breadcrumb {
+  position: absolute;
+  inset: var(--spacing-20) var(--spacing-40) auto;
+}
+.skills-page__intro {
+  margin: var(--opacity-0);
+}
+@media (max-width: 74.99875rem) {
+  .skills-page__content {
+    padding-block: var(--font-size-180) var(--size-110);
+  }
+  .skills-page__content > .breadcrumb {
+    inset-inline: var(--radius-24);
+  }
+}
+@media (max-width: 47.5rem) {
+  .skills-page__content {
+    padding-block: var(--value-140px) var(--spacing-80);
+  }
+  .skills-page__content > .breadcrumb {
+    inset-inline: var(--spacing-20);
+  }
+}

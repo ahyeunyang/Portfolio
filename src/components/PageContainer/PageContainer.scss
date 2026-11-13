@@ -1,0 +1,16 @@
+.page-container {
+  width: calc(var(--value-100) * 1%);
+  padding-inline: var(--spacing-40);
+}
+
+@media (max-width: 74.99875rem) {
+  .page-container {
+    padding-inline: var(--radius-24);
+  }
+}
+
+@media (max-width: 47.5rem) {
+  .page-container {
+    padding-inline: var(--spacing-20);
+  }
+}

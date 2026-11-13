@@ -1,12 +1,12 @@
 .menu-page {
-  width: min(100% - 48px, 1200px);
-  min-height: 60vh;
+  width: min(calc(var(--value-100) * 1%) - var(--radius-48), var(--header-container-min));
+  min-height: var(--value-60vh);
   margin-inline: auto;
-  padding-block: clamp(48px, 8vw, 100px);
+  padding-block: clamp(var(--radius-48), var(--value-8vw), var(--size-100));
 }
 .menu-page h1 {
-  margin: 0;
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  margin: var(--opacity-0);
+  font-size: clamp(var(--font-size-28), var(--value-4vw), var(--radius-48));
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--value-negative-0).04em;
 }

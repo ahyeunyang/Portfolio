@@ -1,0 +1,23 @@
+.breadcrumb {
+  color: var(--color-gray-550);
+  font-size: var(--radius-12);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-1);
+}
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: var(--spacing-20);
+  margin: var(--opacity-0);
+  padding: var(--opacity-0);
+  list-style: none;
+}
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+.breadcrumb svg {
+  flex-shrink: var(--opacity-0);
+  color: var(--color-gray-700);
+}

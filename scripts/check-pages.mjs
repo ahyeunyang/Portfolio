@@ -11,7 +11,7 @@ window.scrollTo=()=>{};
 let mobile=false; const listeners=new Set();
 window.matchMedia=()=>({get matches(){return mobile;},addEventListener:(_,fn)=>listeners.add(fn),removeEventListener:(_,fn)=>listeners.delete(fn)});
 fs.mkdirSync(".reference", {recursive:true});
-await build({entryPoints:['src/App.jsx'],bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.svg':'dataurl','.docx':'dataurl','.scss':'empty'},outfile:'.reference/pages-app.mjs'});
+await build({entryPoints:['src/App.jsx'],bundle:true,platform:'node',format:'esm',packages:'external',loader:{'.png':'dataurl','.svg':'dataurl','.docx':'dataurl','.scss':'empty'},outfile:'.reference/pages-app.mjs'});
 const {default:App}=await import('../.reference/pages-app.mjs');
 const root=createRoot(document.getElementById('root'));
 await act(async()=>root.render(React.createElement(App)));
@@ -20,7 +20,11 @@ const links=[...document.querySelectorAll('.pc-header__nav-link')].map(a=>({href
 assert.equal(links.length,7);
 for(const link of links){
  await act(async()=>{document.querySelector('.pc-header__nav-link[href="' + link.href + '"]').click();});
- assert.equal(document.querySelector('main h1').textContent,link.label);
+ assert.equal(document.querySelector('main h1').textContent,link.label === '보유기술' ? '디자인에서 구현까지,경험을 만드는 기술.' : link.label);
+ if (link.label === '보유기술') {
+  assert.equal(document.querySelector('.breadcrumb [aria-current="page"]').textContent,'보유기술');
+  assert(document.querySelector('.page-title__description'));
+ }
  assert.equal(window.location.pathname,link.href);
  assert.equal(window.location.hash,'');
  assert(document.title.startsWith(link.label));
@@ -29,7 +33,7 @@ for(const link of links){
 await act(async()=>{window.history.back();await new Promise(r=>setTimeout(r,30));});
 assert.equal(document.querySelector('main h1').textContent,links.at(-2).label);
 await act(async()=>{window.history.forward();await new Promise(r=>setTimeout(r,30));});
-assert.equal(document.querySelector('main h1').textContent,links.at(-1).label);
+assert.equal(document.querySelector('.page-title__label').textContent,links.at(-1).label);
 await act(async()=>{mobile=true;listeners.forEach(fn=>fn());});
 assert.equal(document.querySelectorAll('.mo-navLink').length,7);
 await act(async()=>document.querySelector('[aria-label="메뉴 열기"]').click());

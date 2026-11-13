@@ -1,0 +1,27 @@
+.animated-title__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.animated-title__character {
+  display: inline-block;
+  opacity: var(--opacity-0);
+  transform: translateY(var(--spacing-15));
+  filter: blur(var(--radius-6));
+  transition: opacity var(--duration-500ms) cubic-bezier(var(--value-0-22), var(--line-height-1), var(--value-0-36), var(--line-height-1)),
+    transform var(--duration-500ms) cubic-bezier(var(--value-0-22), var(--line-height-1), var(--value-0-36), var(--line-height-1)),
+    filter var(--duration-500ms) cubic-bezier(var(--value-0-22), var(--line-height-1), var(--value-0-36), var(--line-height-1));
+  transition-delay: calc(var(--character-index) * var(--duration-30ms));
+}
+.animated-title--visible .animated-title__character {
+  opacity: var(--line-height-1);
+  transform: translateY(var(--opacity-0));
+  filter: blur(var(--opacity-0));
+}
+@media (prefers-reduced-motion: reduce) {
+  .animated-title .animated-title__character {
+    opacity: var(--line-height-1);
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

@@ -2,11 +2,11 @@
 
 .skip {
   position: fixed;
-  top: calc(var(--size-100) * -1);
+  top: calc(var(--size-100) * var(--value-negative-1));
   left: var(--size-20);
   padding: var(--spacing-15);
   background: $color-white;
-  z-index: 30;
+  z-index: var(--value-30);
 }
 .skip:focus {
   top: var(--size-10);

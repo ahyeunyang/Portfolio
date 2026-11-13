@@ -1,0 +1,15 @@
+.page-title__title {
+  margin: var(--opacity-0);
+  font-size: var(--spacing-40);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--value-1-2);
+  letter-spacing: var(--value-negative-0).04em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 47.5rem) {
+  .page-title__title {
+    font-size: var(--spacing-30);
+    line-height: var(--line-height-1-3);
+  }
+}

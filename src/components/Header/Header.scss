@@ -2,24 +2,24 @@
 @font-face {
   font-family: "Header Material Symbols";
   font-style: normal;
-  font-weight: 300;
+  font-weight: var(--value-300);
   font-display: block;
   src: url("../../static/font/material-symbols/header-icons.ttf") format("truetype");
 }
 
 .pc-header {
   background: var(--color-gray-950);
-  width: 100%;
+  width: calc(var(--value-100) * 1%);
   position: relative;
 }
 .pc-header--sticky {
-  z-index: 150;
-  transition: transform 0.25s;
+  z-index: var(--value-150);
+  transition: transform var(--duration-0-25s);
   position: sticky;
-  top: 0;
+  top: var(--opacity-0);
 }
 .pc-header--hidden {
-  transform: translateY(-100%);
+  transform: translateY(calc(var(--value-negative-100) * 1%));
 }
 @media (prefers-reduced-motion: reduce) {
   .pc-header--sticky {
@@ -46,7 +46,7 @@
   white-space: nowrap;
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-extrabold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
 }
 .pc-header__nav-wrap {
   border-top: var(--border-width-1) solid var(--color-gray-800);
@@ -73,13 +73,13 @@
 }
 .pc-header__nav-link {
   color: var(--color-gray-500);
-  letter-spacing: calc(var(--tracking-0-36) * -1);
+  letter-spacing: calc(var(--tracking-0-36) * var(--value-negative-1));
   white-space: nowrap;
   align-items: center;
   height: var(--size-32);
   font-size: var(--font-size-18);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   text-decoration: none;
   display: inline-flex;
 }
@@ -96,26 +96,26 @@
   white-space: nowrap;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: var(--opacity-0);
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   display: inline-flex;
 }
 .mo-header {
   background: var(--color-gray-950);
-  width: 100%;
+  width: calc(var(--value-100) * 1%);
   position: relative;
 }
 .mo-headerSticky {
-  z-index: 150;
+  z-index: var(--value-150);
   will-change: transform;
-  transition: transform 0.25s;
+  transition: transform var(--duration-0-25s);
   position: sticky;
-  top: 0;
+  top: var(--opacity-0);
 }
 .mo-headerHidden {
-  transform: translateY(-100%);
+  transform: translateY(calc(var(--value-negative-100) * 1%));
 }
 @media (prefers-reduced-motion: reduce) {
   .mo-headerSticky {
@@ -124,7 +124,7 @@
 }
 .mo-top {
   height: var(--size-48);
-  padding: 0 0 0 var(--spacing-16);
+  padding: var(--opacity-0) var(--opacity-0) var(--opacity-0) var(--spacing-16);
   border-bottom: var(--border-width-1) solid var(--color-gray-800);
   justify-content: space-between;
   align-items: center;
@@ -141,14 +141,14 @@
 }
 .mo-consultLink {
   height: var(--size-48);
-  padding: 0 var(--spacing-12);
+  padding: var(--opacity-0) var(--spacing-12);
   color: var(--color-primary);
   white-space: nowrap;
   justify-content: center;
   align-items: center;
   font-size: var(--font-size-15);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   display: inline-flex;
 }
 .mo-iconBtn {
@@ -156,11 +156,11 @@
   width: var(--size-48);
   height: var(--size-48);
   color: var(--color-gray-200);
-  background: 0 0;
-  border: 0;
+  background: var(--opacity-0) var(--opacity-0);
+  border: var(--opacity-0);
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding: var(--opacity-0);
   display: inline-flex;
 }
 .mo-navWrap {
@@ -170,7 +170,7 @@
   align-items: center;
   gap: var(--spacing-20);
   height: var(--size-48);
-  padding: 0 var(--spacing-16);
+  padding: var(--opacity-0) var(--spacing-16);
   scrollbar-width: none;
   display: flex;
   overflow-x: auto;
@@ -199,12 +199,12 @@
 .mo-navLink {
   height: var(--size-48);
   color: var(--color-gray-450);
-  letter-spacing: calc(var(--tracking-0-64) * -1);
+  letter-spacing: calc(var(--tracking-0-64) * var(--value-negative-1));
   white-space: nowrap;
   align-items: center;
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   display: inline-flex;
 }
 .mo-navLink[aria-current="page"],
@@ -212,16 +212,16 @@
   color: var(--color-primary);
 }
 .mo-drawer {
-  z-index: 1000;
+  z-index: var(--value-1000);
   background: var(--color-gray-900);
   flex-direction: column;
   display: flex;
   position: fixed;
-  inset: 0;
+  inset: var(--opacity-0);
 }
 .mo-drawerTop {
   height: var(--size-48);
-  padding: 0 0 0 var(--spacing-16);
+  padding: var(--opacity-0) var(--opacity-0) var(--opacity-0) var(--spacing-16);
   border-bottom: var(--border-width-1) solid var(--color-gray-800);
   flex: none;
   justify-content: space-between;
@@ -236,19 +236,19 @@
 .mo-drawerTopLink {
   height: var(--size-48);
   color: var(--color-gray-350);
-  letter-spacing: calc(var(--tracking-0-56) * -1);
+  letter-spacing: calc(var(--tracking-0-56) * var(--value-negative-1));
   white-space: nowrap;
   align-items: center;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   display: inline-flex;
 }
 .mo-drawerBody {
   gap: var(--spacing-24);
   padding: var(--spacing-32) var(--spacing-16);
   flex-direction: column;
-  flex: 1;
+  flex: var(--line-height-1);
   display: flex;
   overflow-y: auto;
 }
@@ -259,10 +259,10 @@
 }
 .mo-drawerLabel {
   color: var(--color-gray-650);
-  letter-spacing: calc(var(--tracking-0-56) * -1);
+  letter-spacing: calc(var(--tracking-0-56) * var(--value-negative-1));
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-semibold);
-  line-height: 130%;
+  line-height: calc(var(--value-130) * 1%);
 }
 .mo-drawerList {
   flex-direction: column;
@@ -271,17 +271,17 @@
 .mo-drawerLink {
   height: var(--size-48);
   color: var(--color-gray-500);
-  letter-spacing: calc(var(--tracking-0-8) * -1);
+  letter-spacing: calc(var(--tracking-0-8) * var(--value-negative-1));
   white-space: nowrap;
   align-items: center;
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   display: flex;
 }
 .mo-drawerLinkBold,
 .mo-drawerLinkSocial {
-  letter-spacing: 0;
+  letter-spacing: var(--opacity-0);
   font-weight: var(--font-weight-bold);
 }
 .mo-drawerLinkSocial {
@@ -289,11 +289,11 @@
 }
 .mo-drawerDivider {
   background: var(--color-gray-800);
-  border: 0;
+  border: var(--opacity-0);
   flex: none;
-  width: 100%;
+  width: calc(var(--value-100) * 1%);
   height: var(--size-1);
-  margin: var(--spacing-6) 0;
+  margin: var(--spacing-6) var(--opacity-0);
 }
 .mo-drawerBottom {
   gap: var(--spacing-8);
@@ -304,33 +304,33 @@
 }
 .mo-drawerBottomBtn {
   box-sizing: border-box;
-  min-width: 0;
+  min-width: var(--opacity-0);
   height: var(--size-48);
-  padding: 0 var(--spacing-20);
+  padding: var(--opacity-0) var(--spacing-20);
   border-radius: var(--radius-8);
   cursor: pointer;
-  letter-spacing: -2%;
+  letter-spacing: calc(var(--value-negative-2) * 1%);
   white-space: nowrap;
-  border: var(--border-width-1) solid #0000;
-  flex: 1;
+  border: var(--border-width-1) solid var(--color-0000);
+  flex: var(--line-height-1);
   justify-content: center;
   align-items: center;
   font-size: var(--font-size-14);
   font-weight: var(--font-weight-semibold);
-  line-height: 100%;
+  line-height: calc(var(--value-100) * 1%);
   display: flex;
 }
 .mo-consultBtn {
   border-color: var(--color-gray-200);
   color: var(--color-gray-200);
-  background: 0 0;
+  background: var(--opacity-0) var(--opacity-0);
 }
 .header-container {
-  width: 100%;
+  width: calc(var(--value-100) * 1%);
   min-width: var(--header-container-min);
   max-width: none;
-  padding: 0 var(--spacing-40);
-  margin: 0 auto;
+  padding: var(--opacity-0) var(--spacing-40);
+  margin: var(--opacity-0) auto;
 }
 .header-logo-image {
   display: block;
@@ -345,7 +345,7 @@
   font-weight: normal;
   font-style: normal;
   font-size: var(--font-size-24);
-  line-height: 1;
+  line-height: var(--line-height-1);
   letter-spacing: normal;
   text-transform: none;
   display: inline-block;
@@ -359,20 +359,20 @@
 .mo-nav,
 .mo-drawerList {
   list-style: none;
-  margin: 0;
+  margin: var(--opacity-0);
 }
 .mo-drawerList {
-  padding: 0;
+  padding: var(--opacity-0);
 }
 .mo-drawerLabel {
-  margin: 0;
+  margin: var(--opacity-0);
 }
 .pc-header,
 .mo-header,
 .mo-drawer {
   font-family: $font-body;
-  line-height: 1.5;
+  line-height: var(--line-height-1-5);
 }
 .skip {
-  z-index: 1100;
+  z-index: var(--value-1100);
 }
